@@ -5,7 +5,7 @@ function checkNID() {
 	  alert("Please enter National ID!");
 	  return false;
 	}
-	if (isNaN(nid)) {
+	if (isNaN(nid) || !/^\d+$/.test(nid)) {
 	  alert("National ID must contain numbers only!");
 	  return false;
 	}
@@ -27,9 +27,7 @@ function checkNID() {
   function checkWorkDays() {
 	let val = (document.getElementById("workDays").value).trim();
 	if (val === "") return false;
-	if (isNaN(val)) return false;
-	let num = parseInt(val);
-	if (num < 1 || num > 6) return false;
+	if (!/^[1-6]$/.test(val)) return false;
 	return true;
   }
   
