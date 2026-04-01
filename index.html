@@ -99,34 +99,41 @@
       opacity: 0;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+
     .modal.show .custom-pr-modal .modal-content {
       transform: scale(1);
       opacity: 1;
     }
+
     .custom-pr-modal .modal-header {
       background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
       color: #fff;
       border-bottom: none;
       padding: 1.25rem 1.5rem;
     }
+
     .custom-pr-modal .modal-title {
       font-weight: 700;
       letter-spacing: 0.5px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
+
     .custom-pr-modal .btn-close {
       filter: invert(1) brightness(200%);
       opacity: 0.8;
       transition: transform 0.3s ease;
     }
+
     .custom-pr-modal .btn-close:hover {
       opacity: 1;
       transform: rotate(90deg);
     }
+
     .custom-pr-modal .modal-body {
       padding: 0;
       background: #0f0c29;
     }
+
     .custom-pr-modal img {
       width: 100%;
       display: block;
@@ -135,7 +142,8 @@
     }
   </style>
 
-  <div class="modal fade" id="prModal" tabindex="-1" aria-labelledby="prModalLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal fade" id="prModal" tabindex="-1" aria-labelledby="prModalLabel" aria-hidden="true"
+    data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered modal-lg custom-pr-modal">
       <div class="modal-content">
         <div class="modal-header">
@@ -143,7 +151,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
-          <img src="poster.png" alt="Data Analytics for MarTech">
+          <img src="images/poster.png" alt="Data Analytics for MarTech">
         </div>
       </div>
     </div>

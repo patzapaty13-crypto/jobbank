@@ -1,78 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Student Job Bank System</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container mt-3">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Student Job Bank System</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Job Opportunities
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">นักศึกษาช่วยสอน (Student demonstrator)</a></li>
-              <li><a class="dropdown-item" href="#">Job#2</a></li>
-              <li><a class="dropdown-item" href="#">Job#3</a></li>
-            </ul>
-          </li>
-        </ul>
+  <div class="container mt-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Student Job Bank System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+          aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Job Opportunities
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">นักศึกษาช่วยสอน (Student demonstrator)</a></li>
+                <li><a class="dropdown-item" href="#">Job#2</a></li>
+                <li><a class="dropdown-item" href="#">Job#3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modern Job Card Design -->
+    <style>
+      body {
+        font-family: 'Prompt', sans-serif;
+        background-color: #f8f9fa;
+      }
+      .job-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      }
+      .job-image-wrapper {
+        background: linear-gradient(135deg, #f6f8fd 0%, #f1f5f9 100%);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      .job-image-wrapper img {
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease;
+      }
+      .job-card:hover .job-image-wrapper img {
+        transform: scale(1.03);
+      }
+      .job-content {
+        padding: 2.5rem 3rem;
+      }
+      .badge-premium {
+        background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+        color: white;
+        padding: 0.5em 1em;
+        font-weight: 500;
+        border-radius: 50px;
+      }
+      .info-group {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px dashed #e9ecef;
+        padding-bottom: 1rem;
+      }
+      .info-group:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      .info-icon {
+        width: 32px;
+        height: 32px;
+        background: #eef2ff;
+        color: #4f46e5;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+      .info-content h6 {
+        color: #64748b;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.3rem;
+      }
+      .info-content p, .info-content ul {
+        color: #334155;
+        margin-bottom: 0;
+        font-size: 0.95rem;
+      }
+      .info-content ul {
+        padding-left: 1.2rem;
+      }
+    </style>
+
+    <div class="job-card mt-5 mx-auto" style="max-width: 1000px;">
+      <div class="row g-0">
+        <!-- Left: Image -->
+        <div class="col-md-5">
+          <div class="job-image-wrapper">
+            <img src="images/promote_job1.png" class="img-fluid" alt="Student Demonstrator Hiring">
+          </div>
+        </div>
+        <!-- Right: Content -->
+        <div class="col-md-7">
+          <div class="job-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <span class="badge badge-premium">เปิดรับสมัครด่วน</span>
+              <span class="text-muted small">📍 ภาคเรียนที่ 2/2568</span>
+            </div>
+            
+            <h3 class="fw-bold mb-4" style="color: #0f172a;">เปิดรับนักศึกษาช่วยสอน 4 - 6 คน</h3>
+            
+            <div class="info-group d-flex">
+              <div class="info-icon">⭐</div>
+              <div class="info-content">
+                <h6>คุณสมบัติผู้สมัคร</h6>
+                <ul>
+                  <li>นักศึกษาปริญญาตรีชั้นปีที่ 1-4 สังกัดคณะวิทยาศาตร์และเทคโนโลยี</li>
+                  <li>สามารถใช้ Power BI และ Excel ได้อย่างคล่องแคล่ว</li>
+                  <li>ถ้าสามารถเขียน Python ได้จะได้รับพิจารณาเป็นพิเศษ</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="info-group d-flex">
+              <div class="info-icon">🕒</div>
+              <div class="info-content">
+                <h6>ระยะเวลาทำงาน</h6>
+                <p>วันจันทร์ พุธ ศุกร์ เวลา 9.00 - 12.00น.</p>
+              </div>
+            </div>
+
+            <div class="info-group d-flex">
+              <div class="info-icon">📅</div>
+              <div class="info-content">
+                <h6>วันที่เปิดรับสมัคร</h6>
+                <p>5 - 20 พฤษภาคม 2568</p>
+              </div>
+            </div>
+
+            <div class="info-group d-flex">
+              <div class="info-icon">✉️</div>
+              <div class="info-content">
+                <h6>ช่องทางรับสมัคร</h6>
+                <p>สมัครได้ด้วยตนเองที่ สำนักคณบดี คณะวิทยาศาสตร์และเทคโนโลยี <br>
+                  หรือส่ง Resume ไปที่ <a href="mailto:alan_m@utcc.ac.th" class="fw-bold text-decoration-none">alan_m@utcc.ac.th</a></p>
+              </div>
+            </div>
+            
+            <div class="mt-4 pt-2">
+              <a href="index.html" class="btn btn-primary px-4 py-3 w-100 fw-bold d-block text-center text-white text-decoration-none" style="border-radius: 12px; background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%); border: none; box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35); transition: all 0.2s ease;">
+                🚀 กลับไปกรอกใบสมัคร
+              </a>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  
-  <table class="table table-striped">
-    <thead>
-      <tr>
-		<th></th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-		<td rowspan="7"><img src="images/promote_job1.png" class="rounded mx-auto d-block" alt="Alan McDonald" width="400" height="300"></td>
-        <th colspan="2">เปิดรับนักศึกษาช่วยสอน 4 - 6 คน</th>
-      </tr>
-      <tr>
-        <th>คุณสมบัติ:</th>
-        <td>
-          <li>นักศึกษาปริญญาตรีชั้นปีที่ 1-4 สังกัดคณะวิทยาศาตร์และเทคโนโลยี</li>
-          <li>สามารถใช้ Power BI และ Excel ได้อย่างคล่องแคล่ว</li>
-          <li>ถ้าสามารถเขียน Python ได้จะได้รับพิจารณาเป็นพิเศษ</li>
-        </td>
-      </tr>
-	  <tr>
-        <th>ระยะเวลาทำงาน:</th>
-        <td>
-          ภาคเรียนที่ 2/2568 <br>
-          วันจันทร์ พุธ ศุกร์ เวลา 9.00 - 12.00น.
-        </td>
-      </tr>
-	  <tr>
-        <th>วันที่เปิดรับสมัคร:</th>
-        <td>5 - 20 พฤษภาคม 2568</td>
-    </tr>
-	  <tr>
-        <th>ช่องทางรับสมัคร:</th>
-        <td>สมัครได้ด้วยตนเองที่ สำนักคณบดี คณะวิทยาศาสตร์และเทคโนโลยี <br>
-          หรือสมัครผ่านอีเมลล์ที่ alan_m@utcc.ac.th</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </div>
 
 </body>
+
 </html>
